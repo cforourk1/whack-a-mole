@@ -30,21 +30,23 @@ const DIGLETTS = [
     points: 9,
   },
       {
-    id: 7,
+    id: 6,
     image: "../images/shinyDugtrio.png",
     name: "Shiny Dugtrio",
     points: 12,
   },
   {
-    id: 8,
+    id: 7,
     image: "../images/shinyAlolaDig.png",
     name: "Shiny Alola Diglett",
     points: 13,
   },
   {
-    id: 9,
+    id: 8,
     image: "../images/shinyAlolaDugtrio.png",
     name: "Shiny Alola Dugtrio",
     points: 17,
   }
 ]
+
+export default DIGLETTS
