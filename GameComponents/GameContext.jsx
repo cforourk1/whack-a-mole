@@ -1,10 +1,13 @@
 import DIGLETTS from "../src/data"
-import { createContext, useContext, useState } from "react"
+import { createContext, useContext, useState, useEffect } from "react"
 const GameContext = createContext()
 
 
 
 export default function GameProvider ({children}) {
+
+//adding timer
+const [timer, setTimer] = useState(30)
 
 // declaring useState Variables
 //start score at 0
@@ -41,6 +44,15 @@ function whackDiglett() {
     setcurrentDiglett(DIGLETTS[Math.floor(Math.random() * DIGLETTS.length)])
 
 }
+
+//timer function
+
+useEffect(() => {
+setgamePlay()
+timer()
+setTimer()
+setgamePlay()
+)}
 
 //value for sharing among components
 

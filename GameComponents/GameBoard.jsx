@@ -14,6 +14,7 @@ return (
     <div>
         <div className="score">
         <h2>Score: {score} points</h2>
+        </div>
         <ul className="field">
         {field.map((hasDiglett, holeIndex) => (
         <Hole
@@ -27,7 +28,6 @@ return (
         />
         ))}
      </ul>
-    </div>
     <button  onClick={() => restartGame()}>Restart Game</button>
     </div>
 )

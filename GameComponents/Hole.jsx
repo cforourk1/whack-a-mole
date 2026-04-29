@@ -5,11 +5,10 @@ const isActive = hasDiglett
 
 
 return (
-    <li className="hole">
+    <li className="hole" onClick={isActive ? () => whackDiglett() : null}>
         {isActive ? (
             <div>
                 <img src={currentDiglett.image} />
-                <button onClick={() => whackDiglett()}>Catch Diglett!</button>
             </div>
         ) : null }
     </li>
