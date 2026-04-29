@@ -44,7 +44,7 @@ function restartGame() {
 /* function to keep score and pop up more random digletts
 */
 function whackDiglett() {
-    setScore(score + currentDiglett.points)
+    setScore(score + 1)
     setdigHole(Math.floor(Math.random() * 9))
     setcurrentDiglett(DIGLETTS[Math.floor(Math.random() * DIGLETTS.length)])
 

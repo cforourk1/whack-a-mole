@@ -17,6 +17,7 @@ return (
         <h2>Timer: {timer}</h2>
         </div>
         <button className="restart"  onClick={() => restartGame()}>Restart Game</button>
+{/* the field map is how diglett will show   */}
         <ul className="field">
         {field.map((hasDiglett, holeIndex) => (
         <Hole
