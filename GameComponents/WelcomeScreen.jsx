@@ -13,7 +13,7 @@ return (
     <div>
         <div className="welcome">
         <h2>Catch a Diglett!</h2>
-        <p>Click the Diglett's that pop up to score point. Try to get as many as you can before time runs out!</p>
+        <p>Click the Digletts that pop up to score point. Try to get as many as you can before time runs out!</p>
     </div>
     <button  onClick={() => startGame()}>Start Game</button>
     </div>

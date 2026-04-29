@@ -1,17 +1,17 @@
-/* this function will display an empty hole unless diglett is active - the props come from GameBoard and pulls in context 
+/* this function will display an empty hole unless diglett is active - the props come from GameBoard and pulls in context
 */
-export default function Hole({ holeIndex, digHole, currentDiglett, whackDiglett }) {
-const isActive = holeIndex === digHole
+export default function Hole({ currentDiglett, hasDiglett, whackDiglett }) {
+const isActive = hasDiglett
 
 
 return (
-    <div className="hole">
+    <li className="hole">
         {isActive ? (
             <div>
                 <img src={currentDiglett.image} />
                 <button onClick={() => whackDiglett()}>Catch Diglett!</button>
             </div>
         ) : null }
-    </div>
+    </li>
 )
 }

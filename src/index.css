@@ -1,4 +1,10 @@
-
+body {
+    background-image: url("/dirt.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    min-height: 100vh;
+}
 
 
 
@@ -9,4 +15,31 @@
 
 }
 
+/* styling for holes */
 
+
+
+.field {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-auto-rows: 7rem;
+  gap: 1rem;
+  padding: 1rem;
+  max-width: 30rem;
+  margin: 0 auto;
+}
+
+
+
+.hole img {
+    width: 5rem;
+    height: 5rem;
+    object-fit: contain;
+
+}
+
+
+.hole {
+    background: url("/hole.png") no-repeat center/contain;
+}

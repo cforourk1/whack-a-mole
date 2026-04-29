@@ -1,4 +1,4 @@
-/* This piece of the function has the restart button, sorts out where a diglett is, maps and creates the holes. 
+/* This piece of the function has the restart button, sorts out where a diglett is, maps and creates the holes.
 */
 
 import Hole from "./Hole"
@@ -6,20 +6,27 @@ import { useGame } from "./GameContext"
 
 export default function GameBoard () {
   const {score, restartGame, digHole, currentDiglett, whackDiglett} = useGame()
+  const field = Array(9).fill(false)
+  field[digHole] = true
 
 return (
+
     <div>
         <div className="score">
-        <h2>Score: ${score}</h2>
-        {Array.from({ length: 9 }).map((_, holeIndex) => (
+        <h2>Score: {score} points</h2>
+        <ul className="field">
+        {field.map((hasDiglett, holeIndex) => (
         <Hole
         key={holeIndex}
         holeIndex={holeIndex}
+        hasDiglett={hasDiglett}
         digHole={digHole}
         currentDiglett={currentDiglett}
         whackDiglett={whackDiglett}
+
         />
         ))}
+     </ul>
     </div>
     <button  onClick={() => restartGame()}>Restart Game</button>
     </div>
