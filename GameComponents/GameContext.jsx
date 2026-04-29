@@ -6,6 +6,10 @@ const GameContext = createContext()
 
 export default function GameProvider ({children}) {
 
+//gameover to restart game
+
+const [gameOver, setGameOver] = useState (false)
+
 //adding timer
 const [timer, setTimer] = useState(30)
 
@@ -28,6 +32,7 @@ function startGame () {
     setgamePlay(true)
     setdigHole(Math.floor(Math.random() * 9))
     setcurrentDiglett(DIGLETTS[Math.floor(Math.random() * DIGLETTS.length)])
+    setTimer(30)
 }
 /* function to reset the game to start.
 */
@@ -45,18 +50,29 @@ function whackDiglett() {
 
 }
 
-//timer function
-
+//timer function to start timer
+// the syntax errors involved in this were sinful
 useEffect(() => {
-setgamePlay()
-timer()
-setTimer()
-setgamePlay()
-)}
+if (!gamePlay) return
+const interval = setInterval(() => {
+setTimer(prev => prev -1)
+}, 1000);
+return () => clearInterval(interval)
+}, [gamePlay])
+
+
+//stop the timer at 0 and stop game
+useEffect(() => {
+    if (timer === 0) {
+    setGameOver(true)
+    setgamePlay(false)
+}
+}, [timer])
+
 
 //value for sharing among components
 
-const value = { score, gamePlay, digHole, currentDiglett, startGame, restartGame, whackDiglett }
+const value = { score, gamePlay, digHole, currentDiglett, startGame, restartGame, whackDiglett, timer, gameOver }
 
 return (
 <GameContext.Provider value={value}>{children}</GameContext.Provider>
